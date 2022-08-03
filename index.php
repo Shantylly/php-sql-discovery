@@ -34,10 +34,13 @@
         </div>
         <div class="block1">
             <?php
-                    $fp = fopen ("exemple.txt", "r");
-                    $contenu_du_fichier = fgets ($fp, 255);
+                    $fp = fopen ("exemple.txt", "r+");
+                    $nb_visites = fgets ($fp, 9);
+                    $nb_visites = $nb_visites + 1;
+                    fseek ($fp, 0);
+                    fputs ($fp, $nb_visites);
                     fclose ($fp);
-                    echo 'Notre fichier contient : '.$contenu_du_fichier;
+                    echo 'Ce site a été ouvert, vu et revu '.$nb_visites.' fois !';
                 ?>
         </div>
     </body>

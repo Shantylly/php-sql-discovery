@@ -1,5 +1,1 @@
-Bonjour ceci est un fichier test.
-
-1. Bonjour
-2. Hello
-3. Hola
+6
