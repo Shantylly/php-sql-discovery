@@ -1,0 +1,19 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+.block1 {
+    width: 400px;
+    margin-left: 200px;
+    margin-top: 20px;
+    outline: 20px;
+    padding: 20px;
+    border: 5px solid gray;
+}
+.center {
+    text-align: center;
+}
