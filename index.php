@@ -33,11 +33,13 @@
             ?>
         </div>
         <div class="block1">
-        <form action = "handler.php" method="post">
-            Votre nom : <input type = "text" name = "nom"><br />
-            Votre fonction : <input type = "text" name = "fonction"><br />
-            <input type = "submit" value = "Envoyer">
-        </form>
+            <form action = "handler.php" method="post" enctype="multipart/form-data">
+                Votre nom : <input type = "text" name = "nom"><br />
+                Votre fonction : <input type = "text" name = "fonction"><br />
+                Votre fichier : <input type = "file" name = "mon_fichier"><br />
+                <input type = "hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type = "submit" value = "Envoyer">
+            </form>
         </div>
         <section class = main, id = text>
             <div class="block1">
@@ -53,4 +55,7 @@
             </div>
         </section>
     </body>
+    <footer>
+        <p class = center id="contact">Contact : 06 66 66 66 66| &copy; 2022, Shanty.</p>
+    </footer>
 </html>
