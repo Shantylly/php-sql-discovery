@@ -32,6 +32,17 @@
                     echo 'Navigateur: ', $match[0], '<br/>';
             ?>
         </div>
+        <div class="block1">
+            <?php
+                require_once('data.php');
+                $conn = mysqli_connect($servername, $username, $password, $database);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                echo 'Connected successfully to database!';
+                mysqli_close($conn);                
+            ?>
+        </div>
         <div class="block2">
             <form action = "src/handler.php" method="post" enctype="multipart/form-data">
                 Votre nom : <input type = "text" name = "nom" autocomplete="nom"> <br/>
