@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="src/style.css">
         <title> PhP test </title>
     </head>
     <body>
@@ -32,11 +32,11 @@
                     echo 'Navigateur: ', $match[0], '<br/>';
             ?>
         </div>
-        <div class="block1">
-            <form action = "handler.php" method="post" enctype="multipart/form-data">
-                Votre nom : <input type = "text" name = "nom"><br />
-                Votre fonction : <input type = "text" name = "fonction"><br />
-                Votre fichier : <input type = "file" name = "mon_fichier"><br />
+        <div class="block2">
+            <form action = "src/handler.php" method="post" enctype="multipart/form-data">
+                Votre nom : <input type = "text" name = "nom" autocomplete="nom"> <br/>
+                Votre fonction : <input type = "text" name = "fonction" autocomplete="fonction"> <br/>
+                Votre fichier : <input type = "file" name = "my_file"> <br/>
                 <input type = "hidden" name="MAX_FILE_SIZE" value="20000">
                 <input type = "submit" value = "Envoyer">
             </form>
@@ -44,18 +44,18 @@
         <section class = main, id = text>
             <div class="block1">
                 <?php
-                    $fp = fopen ("counter.txt", "r+");
+                    $fp = fopen ("src/counter.txt", "r+");
                     $nb_visites = fgets ($fp, 9);
                     $nb_visites = $nb_visites + 1;
                     fseek ($fp, 0);
                     fputs ($fp, $nb_visites);
                     fclose ($fp);
-                    echo 'Ce site a été ouvert, vu et revu '.$nb_visites.' fois !';
+                    echo 'Ce site a été ouvert, vu et revu ',$nb_visites,' fois !';
                     ?>
             </div>
         </section>
     </body>
     <footer>
-        <p class = center id="contact">Contact : 06 66 66 66 66| &copy; 2022, Shanty.</p>
+        <p class = center id="contact">Contact : 06 66 66 66 66 | &copy; 2022, Shanty.</p>
     </footer>
 </html>

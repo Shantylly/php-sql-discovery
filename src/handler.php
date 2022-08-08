@@ -1,6 +1,8 @@
 <html>
     <head>
-    <title>Profil</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="src/style.css">
+        <title> PhP test </title>
     </head>
     <body>
         <nav class="center">
@@ -16,15 +18,18 @@
         if (isset($_POST['nom']) && isset($_POST['fonction'])) {
             echo 'Votre nom est ', $_POST['nom'], ' et votre fonction est ', $_POST['fonction'], '<br/>';
         }
-        if (isset($_FILES['mon_fichier'])) {
-            echo $_FILES['mon_fichier']['name'], '<br/>';
-            echo $_FILES['mon_fichier']['tmp_name'], '<br/>';
-            echo $_FILES['mon_fichier']['name'], '<br/>';
-            echo $_FILES['mon_fichier']['type'], '<br/>';
-            echo $_FILES['mon_fichier']['size'], '<br/>';
+        else {
+            echo 'Erreur : ', $_POST['nom']['error'], '<br/>';
+        }
+        if (isset($_FILES['my_file'])) {
+            echo $_FILES['my_file']['name'], '<br/>';
+            echo $_FILES['my_file']['tmp_name'], '<br/>';
+            echo $_FILES['my_file']['name'], '<br/>';
+            echo $_FILES['my_file']['type'], '<br/>';
+            echo $_FILES['my_file']['size'], '<br/>';
         }
         else {
-            echo 'Erreur : ', $_FILES['mon_fichier']['error'], '<br/>'
+            echo 'Erreur : ', $_FILES['my_file']['error'], '<br/>';
         }
     ?>
     </body>
