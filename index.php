@@ -34,12 +34,24 @@
         </div>
         <div class="block1">
             <?php
+            /*
+                Base de données composées d'une table de 3 éléments : id / username / phone
+            */
                 require_once('data.php');
                 $conn = mysqli_connect($servername, $username, $password, $database);
                 if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                    die("Connection failed: ". $conn->connect_error. '<br/>');
                 }
-                echo 'Connected successfully to database!';
+                echo 'Connected successfully to database! <br/>';
+                $sql = "SELECT id, username, phone FROM user_list";
+                $result = mysqli_query($sql);
+                if ($result->num_rows > 0) {
+                    while($row = $result->mysqli_fetch_assoc()) {
+                        echo "id: ", $row["id"], " - Pseudo: ", $row["username"], " - Phone: ", $row["phone"], "<br/>";
+                    }
+                } else {
+                    echo "0 results";
+                }
                 mysqli_close($conn);                
             ?>
         </div>
